@@ -1,0 +1,33 @@
+<template name="cart">
+  <div class="page-header">
+    <h1>
+      <small>Koszyk</small>
+    </h1>
+  </div>
+  <table class="span4 table table-striped table-bordered table-hover">
+    <thead>
+      <th>Ilość</th>
+      <th>Nazwa produktu</th>
+      <th>Cena</th>
+      <th></th>
+    </thead>
+    <tbody>
+      {{#each cartitems}}
+      <tr>
+        <td>{{qty}}</td>
+        <td>{{productname}}</td>
+        <td>{{currency price}}</td>
+        <td><span class="label-important label removeci"><a style="color: white;" href="#">X</a> </span></td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="3">Pusty koszyk</td>
+      </tr>
+      {{/each}}
+      <tr>
+        <td class="totalcol" colspan="2">Suma: </td>
+        <td colspan="2">{{currency cartitems.subtotal}}</td>
+      </tr>
+    </tbody>
+  </table>
+</template>
